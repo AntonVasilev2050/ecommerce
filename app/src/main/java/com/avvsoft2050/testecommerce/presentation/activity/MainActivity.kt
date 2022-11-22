@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             (getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
         }
 
+        binding.imageViewFilter.setOnClickListener {
+            showFilterDialog()
+        }
+
         mainViewModel.homeStores.observe(this) {
             adapterHotSales = HotSalesAdapterR(it)
             viewPagerHotSales.adapter = adapterHotSales
@@ -54,19 +58,6 @@ class MainActivity : AppCompatActivity() {
                 recyclerViewBestSeller.adapter = adapterBestSellers
             }
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val clickedItemId = item.itemId
-        if (clickedItemId == R.id.action_filter) {
-            showFilterDialog()
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     private fun showFilterDialog() {
