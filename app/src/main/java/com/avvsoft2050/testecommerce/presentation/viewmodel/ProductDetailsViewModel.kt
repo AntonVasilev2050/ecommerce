@@ -8,27 +8,22 @@ import com.avvsoft2050.testecommerce.database.AppDatabase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+class ProductDetailsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db = AppDatabase.getInstance(application)
     private val compositeDisposable = CompositeDisposable()
-    val homeStores = db.homeStoreDao().getHomeStores()
-    val bestSellers = db.bestSellerDao().getBestSellers()
+    val productDetails = db.productDetailsDao().getProductDetails()
 
     init {
-        loadGoods()
+        loadProductDetails()
     }
 
-    private fun loadGoods() {
-        val disposable = ApiFactory.apiService.getGoods()
+
+    private fun  loadProductDetails(){
+        val  disposable = ApiFactory.apiService.getProductDetails()
             .subscribeOn(Schedulers.io())
-            .subscribe({ goods ->
-                goods.homeStore?.let { homeStoreList ->
-                    db.homeStoreDao().insertHomeStores(homeStoreList)
-                }
-                goods.bestSeller?.let { bestSellerList ->
-                    db.bestSellerDao().insertBestSellers(bestSellerList)
-                }
+            .subscribe({
+                db.productDetailsDao().insertProductDetails(it)
             }, {
                 Log.d("TEST_OF_LOADING_DATA", it.message.toString())
             })

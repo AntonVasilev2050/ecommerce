@@ -25,6 +25,8 @@
     <string name="list_of_prices">List of prices</string>
     <string name="list_of_sizes">List of sizes</string>
     <string name="ecommerce_splash_screen_logo">Ecommerce splash screen logo</string>
+    <string name="image_of_selected_product">Image of selected product</string>
+    <string name="product_details">Product Details</string>
 
     <string-array name="filter_brand">
         <item>Samsung</item>

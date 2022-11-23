@@ -1,9 +1,14 @@
 package com.avvsoft2050.testecommerce.entity
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.avvsoft2050.testecommerce.converters.Converter
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "product_details")
+@TypeConverters(Converter::class)
 data class ProductDetails (
     @SerializedName("CPU")
     @Expose
@@ -19,7 +24,7 @@ data class ProductDetails (
 
     @SerializedName("color")
     @Expose
-    val color: List<String>?,
+    val color: List<String>,
 
     @PrimaryKey
     @SerializedName("id")
@@ -28,7 +33,7 @@ data class ProductDetails (
 
     @SerializedName("images")
     @Expose
-    val images: List<String>?,
+    val images: List<String>,
 
     @SerializedName("isFavorites")
     @Expose

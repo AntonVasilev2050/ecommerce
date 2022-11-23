@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".presentation.activity.ProductDetailsActivity">
+
+    <ImageView
+        android:id="@+id/imageViewProductDetailsBack"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewProductDetailsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/product_details_back" />
+
+    <TextView
+        android:id="@+id/textViewProductDetailsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/product_details"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsBack"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewProductDetailsCart"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsBack"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsBack" />
+
+    <ImageView
+        android:id="@+id/imageViewProductDetailsCart"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewProductDetailsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewProductDetailsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textViewProductDetailsLabel"
+        app:srcCompat="@drawable/product_details_cart" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerProductDetails"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsLabel" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerProductDetails">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewProductDetailsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Galaxy Note 20 Ultra"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="37dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewProductDetailsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewProductDetailsTitle"
+                app:srcCompat="@drawable/product_details_favorite" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/textViewProductDetailsTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsTitle" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutProductDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                app:tabIndicatorColor="@color/orange"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:tabTextColor="@color/grey_dark">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Features" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsCpu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewProductDetailsCamera"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayoutProductDetails"
+                app:srcCompat="@drawable/product_details_cpu" />
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsCamera"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsCpu"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewProductDetailsSsd"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsCpu"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsCpu"
+                app:srcCompat="@drawable/product_details_camera" />
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsSsd"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsCamera"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewProductDetailsSd"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsCamera"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsCamera"
+                app:srcCompat="@drawable/product_details_ram" />
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsSd"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsSsd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsSsd"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsSsd"
+                app:srcCompat="@drawable/product_details_rom" />
+
+            <TextView
+                android:id="@+id/textViewProductDetailsCpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exynos 990"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewProductDetailsCpu"
+                app:layout_constraintStart_toStartOf="@+id/imageViewProductDetailsCpu"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProductDetailsCpu" />
+
+            <TextView
+                android:id="@+id/textViewProductDetailsCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="108 +12 mp"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewProductDetailsCamera"
+                app:layout_constraintStart_toStartOf="@+id/imageViewProductDetailsCamera"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProductDetailsCamera" />
+
+            <TextView
+                android:id="@+id/textViewProductDetailsSsd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8 GB"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewProductDetailsSsd"
+                app:layout_constraintStart_toStartOf="@+id/imageViewProductDetailsSsd"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProductDetailsSsd" />
+
+            <TextView
+                android:id="@+id/textViewProductDetailsSd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="256 GB"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewProductDetailsSd"
+                app:layout_constraintStart_toStartOf="@+id/imageViewProductDetailsSd"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProductDetailsSd" />
+
+            <TextView
+                android:id="@+id/textViewProductDetailsSelectLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:text="Select color and capacity"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsCpu" />
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsColor772d03Checked"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewProductDetailsSelectLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsSelectLabel"
+                app:srcCompat="@drawable/product_details_color_772d03_checked" />
+
+            <ImageView
+                android:id="@+id/imageViewProductDetailsColor010035"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsColor772d03Checked"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsColor772d03Checked"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsColor772d03Checked"
+                app:srcCompat="@drawable/product_details_color_010035" />
+
+            <Button
+                android:id="@+id/buttonProductDetailsCapacity128"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:text="128 GB"
+                android:textSize="12sp"
+                app:cornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProductDetailsColor010035"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProductDetailsColor010035"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProductDetailsColor010035" />
+
+            <Button
+                android:id="@+id/buttonProductDetailsCapacity256"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/white"
+                android:text="256 GB"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:cornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonProductDetailsCapacity128"
+                app:layout_constraintStart_toEndOf="@+id/buttonProductDetailsCapacity128"
+                app:layout_constraintTop_toTopOf="@+id/buttonProductDetailsCapacity128" />
+
+            <Button
+                android:id="@+id/buttonProductDetailsAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Add to cart button"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="Add to Cart          $1,500.00"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProductDetailsColor772d03Checked" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,12 @@
 package com.avvsoft2050.testecommerce.presentation.activity
 
+import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -31,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         recyclerViewBestSeller = binding.recyclerViewBestSeller
         viewPagerHotSales = binding.viewPagerHotSales
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        mainViewModel.loadGoods()
         adapterBestSellers = BestSellerAdapter(
             onClickAction = {
-
+                val i = Intent(this, ProductDetailsActivity::class.java)
+                startActivity(i)
             }
         )
         viewPagerHotSales.apply {
