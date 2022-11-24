@@ -34,6 +34,13 @@
     <string name="details">Details</string>
     <string name="features">Features</string>
     <string name="cpu_image">CPU image</string>
+    <string name="camera_image">Camera image</string>
+    <string name="cd_image">Cd image</string>
+    <string name="product_details_rom">Product details ROM</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="product_color_1">Product color 1</string>
+    <string name="product_color_2">Product color 2</string>
+    <string name="add_to_cart_button">Add to cart button</string>
 
     <string-array name="filter_brand">
         <item>Samsung</item>

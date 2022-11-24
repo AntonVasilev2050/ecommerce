@@ -45,14 +45,26 @@ class ProductDetailsActivity : AppCompatActivity() {
             adapterProductDetails = ProductDetailsAdapter(it.images)
             viewPagerProductDetails.adapter = adapterProductDetails
             binding.apply {
+                imageViewProductDetailsBack.setOnClickListener {
+                    finish()
+                }
                 textViewProductDetailsTitle.text = it.title
+                ratingBar.rating = it.rating?.toFloat() ?: 0f
                 textViewProductDetailsCpu.text = it.cpu
                 textViewProductDetailsCamera.text = it.camera
                 textViewProductDetailsSsd.text = it.ssd
                 textViewProductDetailsSd.text = it.sd
-                ratingBar.rating = it.rating?.toFloat() ?: 0f
-                imageViewProductDetailsBack.setOnClickListener {
-                    finish()
+                buttonProductDetailsCapacity128.text = buildString {
+                    append(it.capacity?.get(0) ?: "no data")
+                    append(" GB")
+                }
+                buttonProductDetailsCapacity256.text = buildString {
+                    append(it.capacity?.get(1) ?: "no data")
+                    append(" GB")
+                }
+                buttonProductDetailsAddToCart.text = buildString {
+                    append("Add to Cart          $")
+                    append(it.price)
                 }
             }
         }
