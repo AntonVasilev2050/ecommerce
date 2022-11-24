@@ -51,6 +51,9 @@ class ProductDetailsActivity : AppCompatActivity() {
                 textViewProductDetailsSsd.text = it.ssd
                 textViewProductDetailsSd.text = it.sd
                 ratingBar.rating = it.rating?.toFloat() ?: 0f
+                imageViewProductDetailsBack.setOnClickListener {
+                    finish()
+                }
             }
         }
     }
