@@ -47,7 +47,7 @@ class BestSellerAdapter(
     override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
-        holder.binding.imageViewFavorite.setOnClickListener {
+        holder.binding.root.setOnClickListener {
             onClickAction(item)
         }
     }

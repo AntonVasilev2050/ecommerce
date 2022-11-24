@@ -44,6 +44,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         productDetailsViewModel.productDetails.observe(this) {
             adapterProductDetails = ProductDetailsAdapter(it.images)
             viewPagerProductDetails.adapter = adapterProductDetails
+            binding.apply {
+                textViewProductDetailsTitle.text = it.title
+                textViewProductDetailsCpu.text = it.cpu
+                textViewProductDetailsCamera.text = it.camera
+                textViewProductDetailsSsd.text = it.ssd
+                textViewProductDetailsSd.text = it.sd
+                ratingBar.rating = it.rating?.toFloat() ?: 0f
+            }
         }
     }
 }

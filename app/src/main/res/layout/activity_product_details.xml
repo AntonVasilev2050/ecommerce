@@ -20,7 +20,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/product_details_back" />
+        app:srcCompat="@drawable/product_details_back"
+        android:contentDescription="@string/back_to_the_main_screen_button" />
 
     <TextView
         android:id="@+id/textViewProductDetailsLabel"
@@ -48,7 +49,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewProductDetailsLabel"
         app:layout_constraintTop_toTopOf="@+id/textViewProductDetailsLabel"
-        app:srcCompat="@drawable/product_details_cart" />
+        app:srcCompat="@drawable/product_details_cart"
+        android:contentDescription="@string/cart" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerProductDetails"
@@ -83,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Galaxy Note 20 Ultra"
+                tools:text="Galaxy Note 20 Ultra"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -97,10 +99,12 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textViewProductDetailsTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textViewProductDetailsTitle"
-                app:srcCompat="@drawable/product_details_favorite" />
+                app:srcCompat="@drawable/product_details_favorite"
+                android:contentDescription="@string/favorites" />
 
             <RatingBar
                 android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/textViewProductDetailsTitle"
@@ -111,6 +115,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,17 +128,17 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shop" />
+                    android:text="@string/shop" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Details" />
+                    android:text="@string/details" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Features" />
+                    android:text="@string/features" />
             </com.google.android.material.tabs.TabLayout>
 
             <ImageView
@@ -141,13 +146,14 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toStartOf="@+id/imageViewProductDetailsCamera"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabLayoutProductDetails"
-                app:srcCompat="@drawable/product_details_cpu" />
+                app:srcCompat="@drawable/product_details_cpu"
+                android:contentDescription="@string/cpu_image" />
 
             <ImageView
                 android:id="@+id/imageViewProductDetailsCamera"
@@ -236,10 +242,11 @@
                 android:id="@+id/textViewProductDetailsSelectLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
                 android:text="Select color and capacity"
                 android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsCpu" />
 
@@ -247,6 +254,7 @@
                 android:id="@+id/imageViewProductDetailsColor772d03Checked"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/textViewProductDetailsSelectLabel"
                 app:layout_constraintTop_toBottomOf="@+id/textViewProductDetailsSelectLabel"
                 app:srcCompat="@drawable/product_details_color_772d03_checked" />
@@ -265,7 +273,7 @@
                 android:id="@+id/buttonProductDetailsCapacity128"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
                 android:text="128 GB"
                 android:textSize="12sp"
                 app:cornerRadius="6dp"
@@ -291,13 +299,11 @@
                 android:id="@+id/buttonProductDetailsAddToCart"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:contentDescription="Add to cart button"
-                android:paddingLeft="32dp"
-                android:paddingRight="32dp"
                 android:text="Add to Cart          $1,500.00"
                 android:textAllCaps="false"
                 app:cornerRadius="8dp"

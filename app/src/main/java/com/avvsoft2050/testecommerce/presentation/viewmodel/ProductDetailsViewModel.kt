@@ -16,11 +16,11 @@ class ProductDetailsViewModel(application: Application) : AndroidViewModel(appli
 
     init {
         loadProductDetails()
+        Thread.sleep(300)
     }
 
-
-    private fun  loadProductDetails(){
-        val  disposable = ApiFactory.apiService.getProductDetails()
+    private fun loadProductDetails() {
+        val disposable = ApiFactory.apiService.getProductDetails()
             .subscribeOn(Schedulers.io())
             .subscribe({
                 db.productDetailsDao().insertProductDetails(it)

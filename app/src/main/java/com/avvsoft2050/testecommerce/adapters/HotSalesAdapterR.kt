@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso
 class HotSalesAdapterR(private val listOfHomeStore: List<HomeStore>) :
     RecyclerView.Adapter<HotSalesAdapterR.HotSalesViewHolder>() {
 
+    var onHomeStoreClickListener: OnHomeStoreClickListener? = null
+
     inner class HotSalesViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         val imageViewHotSalesItem = itemView.findViewById<ImageView>(R.id.imageViewHotSalesItem)
@@ -21,6 +23,10 @@ class HotSalesAdapterR(private val listOfHomeStore: List<HomeStore>) :
         val textViewItemDescription = itemView.findViewById<TextView>(R.id.textViewItemDescription)
         val imageViewNew = itemView.findViewById<ImageView>(R.id.imageViewNew)
         val buttonBuyNow = itemView.findViewById<Button>(R.id.buttonBuyNow)
+    }
+
+    interface OnHomeStoreClickListener{
+        fun onBuyNowClick(homeStore: HomeStore)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotSalesViewHolder {
@@ -38,6 +44,9 @@ class HotSalesAdapterR(private val listOfHomeStore: List<HomeStore>) :
             holder.imageViewNew.visibility = View.VISIBLE
         } else {
             holder.imageViewNew.visibility = View.INVISIBLE
+        }
+        holder.buttonBuyNow.setOnClickListener {
+            onHomeStoreClickListener?.onBuyNowClick(homeStore)
         }
     }
 

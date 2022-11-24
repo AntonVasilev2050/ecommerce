@@ -27,6 +27,13 @@
     <string name="ecommerce_splash_screen_logo">Ecommerce splash screen logo</string>
     <string name="image_of_selected_product">Image of selected product</string>
     <string name="product_details">Product Details</string>
+    <string name="back_to_the_main_screen_button">Back to the main screen button</string>
+    <string name="cart">Cart</string>
+    <string name="favorites">Favorites</string>
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+    <string name="cpu_image">CPU image</string>
 
     <string-array name="filter_brand">
         <item>Samsung</item>

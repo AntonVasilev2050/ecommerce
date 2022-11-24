@@ -1,21 +1,17 @@
 package com.avvsoft2050.testecommerce.presentation.activity
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.avvsoft2050.testecommerce.R
 import com.avvsoft2050.testecommerce.adapters.BestSellerAdapter
 import com.avvsoft2050.testecommerce.adapters.HotSalesAdapterR
 import com.avvsoft2050.testecommerce.databinding.ActivityMainBinding
 import com.avvsoft2050.testecommerce.databinding.DialogFiltersBinding
+import com.avvsoft2050.testecommerce.entity.HomeStore
 import com.avvsoft2050.testecommerce.presentation.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -40,12 +36,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(i)
             }
         )
-        viewPagerHotSales.apply {
-            clipChildren = false
-            clipToPadding = false
-            offscreenPageLimit = 3
-            (getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        }
 
         binding.imageViewFilter.setOnClickListener {
             showFilterDialog()
@@ -54,6 +44,12 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.homeStores.observe(this) {
             adapterHotSales = HotSalesAdapterR(it)
             viewPagerHotSales.adapter = adapterHotSales
+            adapterHotSales.onHomeStoreClickListener = object : HotSalesAdapterR.OnHomeStoreClickListener{
+                override fun onBuyNowClick(homeStore: HomeStore) {
+                    val intent = Intent(applicationContext, ProductDetailsActivity::class.java)
+                    startActivity(intent)
+                }
+            }
         }
         mainViewModel.bestSellers.observe(this) {
             it?.let {
