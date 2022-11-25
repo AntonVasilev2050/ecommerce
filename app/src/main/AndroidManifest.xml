@@ -14,13 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestEcommerce"
         tools:targetApi="31">
-        <activity
-            android:name=".CartActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".presentation.activity.SplashScreenActivity"
             android:exported="true"
@@ -45,6 +39,13 @@
         </activity>
         <activity
             android:name=".presentation.activity.ProductDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".presentation.activity.CartActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

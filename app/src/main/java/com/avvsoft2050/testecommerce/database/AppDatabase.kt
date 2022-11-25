@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 import com.avvsoft2050.testecommerce.entity.*
 
 @Database(
-    entities = [HomeStore::class, BestSeller::class, ProductDetails::class],
-    version = 2,
+    entities = [HomeStore::class, BestSeller::class, ProductDetails::class, Cart::class, Basket::class],
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -34,5 +34,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun homeStoreDao(): HomeStoreDao
     abstract fun bestSellerDao(): BestSellerDao
     abstract fun productDetailsDao(): ProductDetailsDao
-//    abstract fun orderDao(): OrderDao
+    abstract fun cartDao(): CartDao
+    abstract fun basketDao(): BasketDao
 }

@@ -1,5 +1,6 @@
 package com.avvsoft2050.testecommerce.presentation.activity
 
+import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -40,6 +41,10 @@ class ProductDetailsActivity : AppCompatActivity() {
             page.scaleY = (0.80f + r * 0.20f)
         }
         viewPagerProductDetails.setPageTransformer(compositePageTransformer)
+        binding.imageViewProductDetailsCart.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+        }
 
         productDetailsViewModel.productDetails.observe(this) {
             adapterProductDetails = ProductDetailsAdapter(it.images)

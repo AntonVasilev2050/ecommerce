@@ -1,14 +1,17 @@
 package com.avvsoft2050.testecommerce.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
 
-
+@Entity(tableName = "basket")
 data class Basket(
+    @PrimaryKey
     @SerializedName("id")
     @Expose
-    val id: Int?,
+    val id: Int,
 
     @SerializedName("images")
     @Expose

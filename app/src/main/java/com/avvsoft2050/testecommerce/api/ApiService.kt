@@ -1,7 +1,7 @@
 package com.avvsoft2050.testecommerce.api
 
 import com.avvsoft2050.testecommerce.entity.Goods
-import com.avvsoft2050.testecommerce.entity.Order
+import com.avvsoft2050.testecommerce.entity.Cart
 import com.avvsoft2050.testecommerce.entity.ProductDetails
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -15,5 +15,5 @@ interface ApiService {
     fun getProductDetails(): Single<ProductDetails>
 
     @GET("53539a72-3c5f-4f30-bbb1-6ca10d42c149")
-    fun getOrder(): Single<Order>
+    fun getCart(): Single<Cart>
 }

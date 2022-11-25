@@ -20,7 +20,7 @@ class ProductsInBasketAdapter(
                     Picasso.get().load(basket.images).into(binding.imageViewCartItemImage)
                     binding.textViewCartItemTitle.text = basket.title
                     val oneProductPrice = basket.price
-                    val productCount = 2
+                    val productCount = 1
                     binding.textViewCartItemPrice.text = buildString {
                         append("$")
                         append(productCount * (oneProductPrice ?: 0))
