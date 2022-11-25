@@ -41,6 +41,7 @@
     <string name="product_color_1">Product color 1</string>
     <string name="product_color_2">Product color 2</string>
     <string name="add_to_cart_button">Add to cart button</string>
+    <string name="my_cart">My Cart</string>
 
     <string-array name="filter_brand">
         <item>Samsung</item>
