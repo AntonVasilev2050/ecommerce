@@ -42,6 +42,13 @@
     <string name="product_color_2">Product color 2</string>
     <string name="add_to_cart_button">Add to cart button</string>
     <string name="my_cart">My Cart</string>
+    <string name="picture_of_product_in_the_cart">Picture of product in the cart</string>
+    <string name="decrease_number_of_the_product_in_the_cart">Decrease number of the product in the cart</string>
+    <string name="increase_number_of_the_product_in_the_cart">Increase number of the product in the cart</string>
+    <string name="put_the_product_into_the_bin">Put the product into the bin</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="checkout_action">Checkout</string>
 
     <string-array name="filter_brand">
         <item>Samsung</item>

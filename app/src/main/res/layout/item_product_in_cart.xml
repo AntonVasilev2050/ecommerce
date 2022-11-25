@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/iphone12" />
+            app:srcCompat="@drawable/iphone12"
+            android:contentDescription="@string/picture_of_product_in_the_cart" />
 
     </androidx.cardview.widget.CardView>
 
@@ -30,17 +31,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Galaxy Note 20 Ultra"
+        tools:text="Galaxy Note 20 Ultra"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/textViewCartItemPrise"
+        android:id="@+id/textViewCartItemPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="$3000.00"
+        tools:text="$3000.00"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/textViewCartItemTitle" />
@@ -49,11 +50,10 @@
         android:id="@+id/viewRectangle"
         android:layout_width="26dp"
         android:layout_height="68dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:background="@drawable/cart_rectangle_background"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewCartItemPrise"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCartItemPrice"
         app:layout_constraintStart_toEndOf="@+id/textViewCartItemTitle"
         app:layout_constraintTop_toTopOf="@+id/textViewCartItemTitle" />
 
@@ -65,7 +65,8 @@
         app:layout_constraintEnd_toEndOf="@+id/viewRectangle"
         app:layout_constraintStart_toStartOf="@+id/viewRectangle"
         app:layout_constraintTop_toTopOf="@+id/viewRectangle"
-        app:srcCompat="@drawable/cart_minus" />
+        app:srcCompat="@drawable/cart_minus"
+        android:contentDescription="@string/decrease_number_of_the_product_in_the_cart" />
 
     <ImageView
         android:id="@+id/imageViewCartPlus"
@@ -75,13 +76,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/viewRectangle"
         app:layout_constraintEnd_toEndOf="@+id/viewRectangle"
         app:layout_constraintStart_toStartOf="@+id/viewRectangle"
-        app:srcCompat="@drawable/cart_plus" />
+        app:srcCompat="@drawable/cart_plus"
+        android:contentDescription="@string/increase_number_of_the_product_in_the_cart" />
 
     <TextView
         android:id="@+id/textViewCartProductCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        tools:text="2"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/viewRectangle"
         app:layout_constraintEnd_toEndOf="@+id/viewRectangle"
@@ -89,13 +91,14 @@
         app:layout_constraintTop_toTopOf="@+id/viewRectangle" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageViewCartItemBin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/viewRectangle"
         app:layout_constraintStart_toEndOf="@+id/viewRectangle"
         app:layout_constraintTop_toTopOf="@+id/viewRectangle"
-        app:srcCompat="@drawable/cart_bin" />
+        app:srcCompat="@drawable/cart_bin"
+        android:contentDescription="@string/put_the_product_into_the_bin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
