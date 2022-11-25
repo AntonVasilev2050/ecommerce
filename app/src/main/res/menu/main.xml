@@ -5,8 +5,8 @@
     <item
         android:id="@+id/action_filter"
         android:orderInCategory="1"
-
         android:title="@string/filters"
+        android:icon="@drawable/main_filter_icon"
         app:showAsAction="always" />
 
 </menu>

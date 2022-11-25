@@ -16,7 +16,7 @@ class ProductDetailsViewModel(application: Application) : AndroidViewModel(appli
 
     init {
         loadProductDetails()
-        Thread.sleep(300)
+        Thread.sleep(500)
     }
 
     private fun loadProductDetails() {

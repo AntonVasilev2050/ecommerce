@@ -17,6 +17,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         loadGoods()
+        Thread.sleep(500)
     }
 
     private fun loadGoods() {
