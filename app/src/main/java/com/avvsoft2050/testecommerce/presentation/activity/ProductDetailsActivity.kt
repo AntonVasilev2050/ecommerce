@@ -13,12 +13,14 @@ import androidx.viewpager2.widget.ViewPager2
 import com.avvsoft2050.testecommerce.R
 import com.avvsoft2050.testecommerce.adapters.ProductDetailsAdapter
 import com.avvsoft2050.testecommerce.databinding.ActivityProductDetailsBinding
+import com.avvsoft2050.testecommerce.presentation.viewmodel.CartViewModel
 import com.avvsoft2050.testecommerce.presentation.viewmodel.ProductDetailsViewModel
 
 class ProductDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailsBinding
     private lateinit var productDetailsViewModel: ProductDetailsViewModel
+    private lateinit var cartViewModel: CartViewModel
     private lateinit var adapterProductDetails: ProductDetailsAdapter
     private lateinit var viewPagerProductDetails: ViewPager2
 
@@ -28,6 +30,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
         viewPagerProductDetails = binding.viewPagerProductDetails
         productDetailsViewModel = ViewModelProvider(this)[ProductDetailsViewModel::class.java]
+        cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         viewPagerProductDetails.apply {
             clipChildren = false
             clipToPadding = false
@@ -72,6 +75,10 @@ class ProductDetailsActivity : AppCompatActivity() {
                     append(it.price)
                 }
             }
+        }
+
+        cartViewModel.cart.observe(this){
+            val productsInBasketCount = it.basket.size
         }
     }
 }

@@ -26,16 +26,20 @@ class CartActivity : AppCompatActivity() {
 
             }
         )
-
         cartViewModel.cart.observe(this){
-            binding.textViewCartTotal.text = buildString {
-                append("$")
-                append(it.total.toString())
-                append(" us")
-            }
-            binding.textViewCartDelivery.text = it.delivery
-        }
+            binding.apply {
+                imageViewCartBack.setOnClickListener {
+                    finish()
+                }
+                textViewCartTotal.text = buildString {
+                    append("$")
+                    append(it.total.toString())
+                    append(" us")
+                }
+                textViewCartDelivery.text = it.delivery
 
+            }
+        }
         cartViewModel.baskets.observe(this) {
             adapterProductsInBasket.submitList(it)
             recyclerViewCart.adapter = adapterProductsInBasket
